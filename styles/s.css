@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 50px;
+}
+
+main {
+    padding: 20px;
+}
+
+.about-author {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-author h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-author p {
+    font-size: 16px;
+    line-height: 1.5;
+}
