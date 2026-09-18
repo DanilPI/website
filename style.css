@@ -1,0 +1,255 @@
+:root {
+  --accent: #c9d7db;
+  --background: #050607;
+  --text: #c8d0d8;
+  --muted: #7d8994;
+  --subtle: #55606a;
+  --error: #e78284;
+  color-scheme: dark;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  padding: 0.85rem 1rem 1.5rem;
+  overflow-wrap: anywhere;
+  background: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--text);
+}
+
+a:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 0.2rem;
+}
+
+.terminal {
+  min-height: calc(100vh - 2.35rem);
+  min-height: calc(100svh - 2.35rem);
+}
+
+.terminal-output:empty {
+  display: none;
+}
+
+.terminal-entry {
+  margin: 0 0 1rem;
+}
+
+.terminal-entry p {
+  margin: 0;
+}
+
+.terminal-entry p + p {
+  margin-top: 0.15rem;
+}
+
+.command-echo {
+  margin-bottom: 0;
+}
+
+.echo-line,
+.command-line,
+.prompt {
+  display: flex;
+  align-items: baseline;
+}
+
+.echo-line,
+.command-line {
+  width: 100%;
+}
+
+.prompt {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.prompt-user,
+.prompt-host {
+  color: var(--accent);
+}
+
+.prompt-muted,
+.output-muted,
+.command-description {
+  color: var(--muted);
+}
+
+.prompt-path {
+  color: #81a1c1;
+}
+
+.prompt-symbol {
+  margin: 0 0.55rem 0 0.25rem;
+  color: var(--text);
+}
+
+.echo-command {
+  color: var(--text);
+  white-space: pre-wrap;
+}
+
+.command-input {
+  display: block;
+  width: 100%;
+  min-width: 1ch;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  caret-color: var(--accent);
+  caret-shape: block;
+  color: var(--text);
+  font: inherit;
+  line-height: inherit;
+}
+
+.output-title {
+  color: var(--text);
+}
+
+.output-lines,
+.command-list,
+.link-list,
+.project-list,
+.contact-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.output-lines,
+.command-list,
+.link-list,
+.contact-list {
+  margin-top: 0.15rem;
+}
+
+.command-list li {
+  display: grid;
+  max-width: 52rem;
+  grid-template-columns: minmax(8rem, auto) 1fr;
+  column-gap: 1rem;
+}
+
+.command-name,
+.detail-key,
+.project-index {
+  color: var(--accent);
+}
+
+.detail-key::after {
+  color: var(--subtle);
+  content: ":";
+}
+
+.profile-name {
+  color: var(--text);
+}
+
+.profile-handle,
+.project-description,
+.project-tags {
+  color: var(--muted);
+}
+
+.project-list {
+  display: grid;
+  margin-top: 0.15rem;
+  gap: 0.8rem;
+}
+
+.project-heading {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.project-description,
+.project-tags,
+.project-links {
+  margin-left: 3ch !important;
+}
+
+.project-links a + a,
+.custom-links a + a {
+  margin-left: 1rem;
+}
+
+.empty-state {
+  color: var(--muted);
+}
+
+.error-message,
+.error-command {
+  color: var(--error);
+}
+
+noscript {
+  color: var(--error);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 0.65rem 0.75rem 1.25rem;
+  }
+
+  .terminal {
+    min-height: calc(100vh - 1.9rem);
+    min-height: calc(100svh - 1.9rem);
+  }
+
+  .command-list li {
+    grid-template-columns: 1fr;
+  }
+
+  .command-description {
+    padding-left: 2ch;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

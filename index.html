@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="danilp1.ru Website."
+    />
+    <meta name="theme-color" content="#050607" />
+    <title>Terminal</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="terminal" id="terminal" aria-label="Interactive terminal">
+      <div
+        class="terminal-output"
+        id="terminal-output"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+      ></div>
+
+      <form class="command-line" id="command-form" autocomplete="off">
+        <label class="sr-only" for="command-input">Enter a terminal command</label>
+        <span class="prompt" id="prompt" aria-hidden="true"></span>
+        <input
+          class="command-input"
+          id="command-input"
+          name="command"
+          type="text"
+          inputmode="text"
+          autocapitalize="off"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          aria-describedby="command-hint"
+        />
+      </form>
+
+      <p class="sr-only" id="command-hint">
+        Press Enter to run a command. Use the up and down arrow keys for command history.
+      </p>
+    </main>
+
+    <noscript>This terminal needs JavaScript to run.</noscript>
+  </body>
+</html>
